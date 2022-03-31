@@ -4,10 +4,16 @@
 ## Description
   Um jogo de memória, com tema de halloween.
 
+## Modes
+  * Easy Mode :heavy_check_mark:
+  * Medium Mode
+  * Hard Mode
+
 ## Techs
    * HTML
    * CSS
    * Javascript
+   * Jquery
 
 ## Status
    **In progress...**
