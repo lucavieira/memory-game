@@ -1,6 +1,8 @@
 let cards = document.querySelector('.cards')
 let select = document.querySelector('#dificult')
 
+let score = 0
+let clicks = []
 let cards_images = [
     'public/images/cards/book_angle.png', 
     'public/images/cards/coffin.png', 
@@ -59,16 +61,7 @@ function createCards(quantity) {
     } else {
         for(let index = 0; index < quantity; index++) {
             $('.cards').append(`<div class="card" id="${index}" onClick=showCard(this.id)> <img src="${cards_images[index]}" /> </div>`)
-            // var card = document.createElement('div')
-            // var image = document.createElement('img')
-            // card.classList.add('card')
-            // card.id = index
             $('.card').css('background-image', "url(public/images/cards/card.png)")
-            // card.style.backgroundImage = "url('public/images/cards/card.png')"
-            // image.src = cards_images[index]
-            // card.addEventListener('click', () => showCard(id))
-            // card.appendChild(image)
-            // cards.appendChild(card)
         }
     }
 }
@@ -77,7 +70,7 @@ function shuffleArray(cards_array){
     cards_array.sort(()=> Math.random() - 0.5);
 }
 
-let clicks = []
+
 function showCard(id) {
     if(clicks.length < 2) {
         $(`#${id}`).css('background-image', 'url()')
@@ -96,6 +89,11 @@ function showCard(id) {
                 clicks.pop()
             }, 1000)
         } else {
+            score += 1
+            console.log(score)
+            if(select.value == 'easy' && score == 9) {
+                console.log('FINISHED')
+            }
             clicks.pop()
             clicks.pop()
         }
