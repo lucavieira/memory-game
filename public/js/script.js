@@ -1,8 +1,10 @@
-let cards = document.querySelector('.cards')
+const cards = document.querySelector('.cards')
+const window_finished = $('.finished')
+const body = $('main')
 
 let score = 0
-let clicks = []
-let cards_images_easy = [
+const clicks = []
+const cards_images_easy = [
     'public/images/cards/book_angle.png', 
     'public/images/cards/coffin.png', 
     'public/images/cards/eye_angle.png',
@@ -25,7 +27,7 @@ let cards_images_easy = [
 
 $('#dificult').on('change', () => {
     score = 0
-    let dificult = $('#dificult')[0].value
+    const dificult = $('#dificult')[0].value
     if(dificult == 'easy') {
         shuffleArray(cards_images_easy)
         createCards(18, dificult)
@@ -42,7 +44,7 @@ $('#dificult').on('change', () => {
 
 function createCards(quantity, dificult) {
     if(cards.hasChildNodes()) {
-        let cards_length = cards.childNodes.length
+        const cards_length = cards.childNodes.length
         for(let index = 0; index < cards_length; index++) {
             $(`#${index}`).remove(`#${index}`)
         }
@@ -92,6 +94,11 @@ function removeClicks(clicks) {
     clicks.pop()
 }
 
+function finishGame() {
+    window_finished.css('display', 'flex')
+    body.css('opacity', '0.2')
+}
+
 function showCard(id) {
     if(clicks.length < 2) {
         $(`#${id}`).css('background-image', 'url()')
@@ -108,9 +115,11 @@ function showCard(id) {
                 }, 1000)
             } else {
                 score += 1
-                console.log(score)
-                if($('#dificult')[0].value == 'easy' && score == 9) {
-                    console.log('FINISHED')
+                const finish_easy = $('#dificult')[0].value == 'easy' && score == 9
+                const finish_medium = $('#dificult')[0].value == 'medium' && score == 12
+                const finish_hard = $('#dificult')[0].value == 'hard' && score == 15
+                if(finish_easy || finish_medium || finish_hard) {
+                    finishGame()
                 }
                 removeClicks(clicks)
             }

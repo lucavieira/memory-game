@@ -18,7 +18,7 @@ body {
     align-items: center;
 }
 
-h1 {
+h1, h2 {
     font-family: 'October Crow';
     color: #ECC839;
     text-shadow: 0px 0px 5px #FF5B00;
@@ -26,13 +26,60 @@ h1 {
     letter-spacing: .2em;
 }
 
-select {
+h2 {
+    margin: 25px;
+}
+
+.btn {
     width: 200px;
-    height: 35px;
     border: 1px solid #EE9430;
     border-radius: 5px;
     background-color: #2B0E11;
     color: #EE9430;
+    box-shadow: 0px 0px 8px #B63C00;
+}
+
+.btn-select {
+    height: 35px;
+}
+
+.finished {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    max-width: 400px;
+    height: 220px;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-align: center;
+
+    background-color: #15181F;
+}
+
+.finished #web {
+    position: absolute;
+    top: -50px;
+    right: -45px;
+}
+
+.finished p {
+    color: #fff;
+    margin: 0 5px 15px 5px;
+}
+
+.finished a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #fff;
+    padding: 5px 0;
+    margin-top: 5px;
 }
 
 .cards {

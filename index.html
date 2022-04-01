@@ -12,7 +12,7 @@
 <body>
     <main class="container">
         <h1>Memory Game</h1>
-        <select name="dificult" id="dificult">
+        <select name="dificult" id="dificult" class="btn btn-select">
             <option value="">Choose a dificult</option>
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
@@ -20,7 +20,14 @@
         </select>
         <article class="cards"></article>
     </main>
-
+    <div class="finished">
+        <img src="public/images/web.png" alt="Teia de aranha." id="web">
+        <h2>BUUH!!</h2>
+        <p>
+            Parabéns, você terminou esse jogo da memória. Experimente jogar uma outra dificuldade ou jogue na mesma novamente.
+        </p>
+        <a href="index.html" class="btn">Jogar novamente</a>
+    </div>
     <script src="public/js/jquery-1.11.1.min.js"></script>
     <script src="public/js/script.js"></script>
 </body>
