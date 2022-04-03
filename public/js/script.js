@@ -4,32 +4,64 @@ const body = $('main')
 
 let score = 0
 const clicks = []
-const cards_images_easy = [
-    'public/images/cards/book_angle.png', 
-    'public/images/cards/coffin.png', 
-    'public/images/cards/eye_angle.png',
-    'public/images/cards/pumpkin.png',
-    'public/images/cards/scarecrow.png',
-    'public/images/cards/voodoo_doll.png',
-    'public/images/cards/witch.png',
-    'public/images/cards/witchs_hat.png',
-    'public/images/cards/zombie.png',
-    'public/images/cards/book_angle.png', 
-    'public/images/cards/coffin.png', 
-    'public/images/cards/eye_angle.png',
-    'public/images/cards/pumpkin.png',
-    'public/images/cards/scarecrow.png',
-    'public/images/cards/voodoo_doll.png',
-    'public/images/cards/witch.png',
-    'public/images/cards/witchs_hat.png',
-    'public/images/cards/zombie.png',
+const images_easy = [
+    'public/images/cards/easy/broom.png', 
+    'public/images/cards/easy/ghost.png', 
+    'public/images/cards/easy/mummy.png',
+    'public/images/cards/easy/pumpkin.png',
+    'public/images/cards/easy/skull.png',
+    'public/images/cards/easy/candy.png',
+    'public/images/cards/easy/web.png',
+    'public/images/cards/easy/witchs_hat.png',
+    'public/images/cards/easy/potion.png',
 ]
 
+const images_medium = [
+    'public/images/cards/medium/black_cat.png',
+    'public/images/cards/medium/broom.png',
+    'public/images/cards/medium/cemetery.png',
+    'public/images/cards/medium/eye.png',
+    'public/images/cards/medium/insect.png',
+    'public/images/cards/medium/knife.png',
+    'public/images/cards/medium/owl.png',
+    'public/images/cards/medium/phantom.png',
+    'public/images/cards/medium/poison.png',
+    'public/images/cards/medium/red_skull.png',
+    'public/images/cards/medium/skeleton.png',
+    'public/images/cards/medium/vampire.png'
+]
+const images_hard = [
+    'public/images/cards/hard/bat.png',
+    'public/images/cards/hard/candy.png',
+    'public/images/cards/hard/frankenstein.png',
+    'public/images/cards/hard/freddy_krueger.png',
+    'public/images/cards/hard/pennywise.png',
+    'public/images/cards/hard/poison.png',
+    'public/images/cards/hard/ghost.png',
+    'public/images/cards/hard/grave.png',
+    'public/images/cards/hard/scary_hand.png',
+    'public/images/cards/hard/scary_tree.png',
+    'public/images/cards/hard/demon.png',
+    'public/images/cards/hard/spider.png',
+    'public/images/cards/hard/zombie.png',
+    'public/images/cards/hard/murder.png',
+    'public/images/cards/hard/jason.png'
+]
+
+const cards_images = {
+    easy: [...images_easy, ...images_easy],
+
+    medium: [...images_medium, ...images_medium],
+
+    hard: [...images_hard, ...images_hard]
+}
+
+// Identifica a dificuldade que foi selecionada
 $('#dificult').on('change', () => {
     score = 0
     const dificult = $('#dificult')[0].value
+    shuffleArray(cards_images[dificult])
     if(dificult == 'easy') {
-        shuffleArray(cards_images_easy)
         createCards(18, dificult)
     }
 
@@ -42,6 +74,7 @@ $('#dificult').on('change', () => {
     }
 })
 
+// Função que cria os cards
 function createCards(quantity, dificult) {
     if(cards.hasChildNodes()) {
         const cards_length = cards.childNodes.length
@@ -51,25 +84,14 @@ function createCards(quantity, dificult) {
 
         setTimeout(() => {
             for(let index = 0; index < quantity; index++) {
-                if(dificult == 'easy') {
-                    $('.cards').append(`<div class="card" id="${index}" onClick=showCard(this.id)> <img src="${cards_images_easy[index]}" /> </div>`)
-                }
-
-                // if(dificult == 'medium') {
-                //     $('.cards').append(`<div class="card" id="${index}" onClick=showCard(this.id)> <img src="${cards_images_medium[index]}" /> </div>`)
-                // }
-
-                // if(dificult == 'hard') {
-                //     $('.cards').append(`<div class="card" id="${index}" onClick=showCard(this.id)> <img src="${cards_images_hard[index]}" /> </div>`)
-                // }
-
+                $('.cards').append(`<div class="card" id="${index}" onClick=showCard(this.id)> <img src="${cards_images[dificult][index]}" /> </div>`)
                 $('.card').css('background-image', "url(public/images/cards/card.png)")
             }
         }, 200)
         
     } else {
         for(let index = 0; index < quantity; index++) {
-            $('.cards').append(`<div class="card" id="${index}" onClick=showCard(this.id)> <img src="${cards_images_easy[index]}" /> </div>`)
+            $('.cards').append(`<div class="card" id="${index}" onClick=showCard(this.id)> <img src="${cards_images[dificult][index]}" /> </div>`)
             $('.card').css('background-image', "url(public/images/cards/card.png)")
         }
     }
@@ -94,15 +116,17 @@ function removeClicks(clicks) {
     clicks.pop()
 }
 
+// Função de finalização do game
 function finishGame() {
     window_finished.css('display', 'flex')
     body.css('opacity', '0.2')
 }
 
+// Função para mostrar os cards
 function showCard(id) {
     if(clicks.length < 2) {
         $(`#${id}`).css('background-image', 'url()')
-        $(`#${id} img`).css('display', 'block')
+        $(`#${id} img`).css('display', 'flex')
         clicks.push(id)
     }
 
