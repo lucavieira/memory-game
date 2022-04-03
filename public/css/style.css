@@ -5,6 +5,7 @@
 
 body {
     background-color: #0f0f0f;
+    overflow-y: hidden;
 }
 
 .container {
@@ -104,4 +105,10 @@ h2 {
 
 .card img {
     display: none;
+}
+
+@media (max-width: 900px) {
+    body {
+        overflow-y: scroll;
+    }
 }

@@ -4,7 +4,14 @@
 ## Description
   Um jogo de memória, com tema de halloween.
 
-## Modes
+## Images
+
+<img src="./public/images/images_project/background.png" />
+<img src="./public/images/images_project/easy_mode.png" />
+<img src="./public/images/images_project/medium_mode.png" />
+<img src="./public/images/images_project/hard_mode.png" />
+
+## Dificults
   * Easy Mode :heavy_check_mark:
   * Medium Mode :heavy_check_mark:
   * Hard Mode :heavy_check_mark:
