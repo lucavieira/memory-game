@@ -6,10 +6,12 @@
 
 ## Images
 
-<img src="./public/images/images_project/background.png" />
-<img src="./public/images/images_project/easy_mode.png" />
-<img src="./public/images/images_project/medium_mode.png" />
-<img src="./public/images/images_project/hard_mode.png" />
+<div style="display: flex;">
+  <img src="./public/images/images_project/background.png" style="width: 500px;"/>
+  <img src="./public/images/images_project/easy_mode.png" style="width: 500px;"/>
+  <img src="./public/images/images_project/medium_mode.png" style="width: 500px;"/>
+  <img src="./public/images/images_project/hard_mode.png" style="width: 500px;"/>
+</div>
 
 ## Dificults
   * Easy Mode :heavy_check_mark:
