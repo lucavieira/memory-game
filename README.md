@@ -6,8 +6,8 @@
 
 ## Modes
   * Easy Mode :heavy_check_mark:
-  * Medium Mode
-  * Hard Mode
+  * Medium Mode :heavy_check_mark:
+  * Hard Mode :heavy_check_mark:
 
 ## Techs
    * HTML

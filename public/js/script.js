@@ -126,7 +126,7 @@ function finishGame() {
 function showCard(id) {
     if(clicks.length < 2) {
         $(`#${id}`).css('background-image', 'url()')
-        $(`#${id} img`).css('display', 'flex')
+        $(`#${id} img`).css('display', 'block')
         clicks.push(id)
     }
 
