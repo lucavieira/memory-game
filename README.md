@@ -7,10 +7,10 @@
 ## Images
 
 <div style="display: flex;">
-  <img src="./public/images/images_project/background.png" style="width: 500px;"/>
-  <img src="./public/images/images_project/easy_mode.png" style="width: 500px;"/>
-  <img src="./public/images/images_project/medium_mode.png" style="width: 500px;"/>
-  <img src="./public/images/images_project/hard_mode.png" style="width: 500px;"/>
+  <img src="./public/images/images_project/background.png" style="width: 400px;"/>
+  <img src="./public/images/images_project/easy_mode.png" style="width: 400px;"/>
+  <img src="./public/images/images_project/medium_mode.png" style="width: 400px;"/>
+  <img src="./public/images/images_project/hard_mode.png" style="width: 400px;"/>
 </div>
 
 ## Dificults
@@ -25,7 +25,7 @@
    * Jquery
 
 ## Status
-   **In progress...**
+   **Finished**
 
 ## Author
    **Lucas Vieira**<br><br>
